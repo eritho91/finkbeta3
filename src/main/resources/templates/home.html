@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fink - Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="top-page">
+
+<div class="logo-text">Fink</div>
+
+<div class="birds-container">
+
+    <div class="profile-wrapper">
+        <img th:if="${user.profileImageName != null}"
+             th:src="@{'/uploads/' + ${user.profileImageName}}"
+             alt="Profilbild"
+             class="profile-image">
+
+        <div th:if="${user.profileImageName == null}" class="profile-placeholder">
+            🪶
+        </div>
+    </div>
+
+    <h1 th:text="'Välkommen, ' + ${user.username} + '!'"></h1>
+
+    <div class="card">
+        <a th:href="@{/birds/new}">
+            <button type="button">Lägg till ny fågelpost</button>
+        </a>
+
+        <a th:href="@{/birds}">
+            <button type="button">Visa mina fåglar</button>
+        </a>
+    </div>
+
+    <div class="card" th:if="${!#lists.isEmpty(incomingRequests)}">
+        <h2 class="page-title">Vänförfrågningar</h2>
+
+        <ul>
+            <li class="bird-item" th:each="request : ${incomingRequests}">
+                <div class="bird-top">
+                    <div class="bird-info">
+                        <span class="bird-species" th:text="${request.sender.username}"></span>
+                        <span class="bird-location">vill bli vän med dig</span>
+                    </div>
+
+                    <div class="bird-buttons">
+                        <form th:action="@{'/friends/accept/' + ${request.id}}" method="post">
+                            <input type="hidden"
+                                   th:name="${_csrf.parameterName}"
+                                   th:value="${_csrf.token}">
+                            <button type="submit">Acceptera</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card" th:if="${!#lists.isEmpty(friends)}">
+        <h2 class="page-title">Mina vänner</h2>
+
+        <ul>
+            <li class="bird-item" th:each="friendship : ${friends}">
+                <span class="bird-species"
+                      th:text="${friendship.sender.id == user.id ? friendship.receiver.username : friendship.sender.username}">
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card" th:if="${!#lists.isEmpty(allUsers)}">
+        <h2 class="page-title">Hitta användare</h2>
+
+        <ul>
+            <li class="bird-item" th:each="otherUser : ${allUsers}">
+                <div class="bird-top">
+                    <div class="bird-info">
+                        <span class="bird-species" th:text="${otherUser.username}"></span>
+                    </div>
+
+                    <div class="bird-buttons">
+                        <form th:action="@{'/friends/request/' + ${otherUser.id}}" method="post">
+                            <input type="hidden"
+                                   th:name="${_csrf.parameterName}"
+                                   th:value="${_csrf.token}">
+                            <button type="submit">Lägg till vän</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <form th:action="@{/logout}" method="post">
+            <input type="hidden"
+                   th:name="${_csrf.parameterName}"
+                   th:value="${_csrf.token}">
+            <button type="submit">Logga ut</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

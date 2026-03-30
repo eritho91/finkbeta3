@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* ============================= */
+/* GRUND */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #fbfdf4 0%, #f3f7e7 55%, #eef4de 100%);
+    color: #2f3a2f;
+}
+
+/* ============================= */
+/* SIDLAYOUT */
+.center-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 16px 40px;
+}
+
+.top-page {
+    min-height: 100vh;
+    padding: 32px 16px 40px;
+}
+
+/* ============================= */
+/* LOGGA */
+.logo-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 92px;
+    color: #7f9f46;
+    text-align: center;
+    line-height: 1;
+    margin: 24px 0 24px 0;
+}
+
+/* ============================= */
+/* CONTAINERS */
+.container,
+.birds-container {
+    width: 100%;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #fdfef8 0%, #f4f8e8 55%, #edf4dd 100%);
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(86, 104, 52, 0.10);
+    border: 1px solid rgba(150, 170, 105, 0.18);
+}
+
+.container {
+    max-width: 400px;
+    padding: 28px;
+}
+
+.birds-container {
+    max-width: 760px;
+    padding: 24px;
+}
+
+/* ============================= */
+/* TITLAR OCH TEXT */
+h1,
+h2,
+.page-title {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: #314027;
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+    color: #687657;
+}
+
+.empty-text {
+    text-align: center;
+    color: #7b8667;
+    margin: 20px 0;
+}
+
+small {
+    display: block;
+    margin-top: 4px;
+    color: #8a9682;
+    font-size: 12px;
+}
+
+/* ============================= */
+/* FEL OCH INFO */
+.error-text {
+    color: #b42318;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.success-text {
+    color: #2f6b2f;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* ============================= */
+/* FORM */
+form {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #3d4b2f;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="datetime-local"],
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d7e3b7;
+    border-radius: 14px;
+    font-size: 16px;
+    background: #ffffff;
+    color: #2f3a2f;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime-local"]:focus,
+input[type="file"]:focus {
+    border-color: #c9dc87;
+    box-shadow: 0 0 0 3px rgba(201, 220, 135, 0.24);
+    background: #fefff9;
+}
+
+/* ============================= */
+/* KNAPPAR */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 14px;
+    background: linear-gradient(180deg, #d6e59f 0%, #c9dc87 55%, #bdd274 100%);
+    color: #33411f;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 5px 12px rgba(112, 131, 60, 0.14);
+}
+
+button:hover {
+    filter: brightness(1.02);
+    box-shadow: 0 7px 16px rgba(112, 131, 60, 0.18);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* ============================= */
+/* LÄNKAR */
+a {
+    text-decoration: none;
+    color: #668236;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ============================= */
+/* BLOCK OCH AVSTÅND */
+.card {
+    margin-top: 16px;
+}
+
+.actions {
+    margin-top: 22px;
+}
+
+/* ============================= */
+/* PROFIL */
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.profile-image,
+.profile-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #f4f8e8 0%, #dfeab5 100%);
+    font-size: 40px;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================= */
+/* LISTOR */
+ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.bird-item {
+    background: linear-gradient(180deg, #fefff9 0%, #f4f8e8 100%);
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    border-left: 4px solid #c9dc87;
+    box-shadow: 0 3px 8px rgba(86, 104, 52, 0.06);
+}
+
+.bird-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.bird-info {
+    flex: 1;
+}
+
+.bird-species {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2f3a2f;
+    margin-bottom: 6px;
+}
+
+.bird-location {
+    display: block;
+    font-size: 14px;
+    color: #667463;
+    margin-bottom: 6px;
+}
+
+/* ============================= */
+/* BILDER */
+.bird-image-wrapper {
+    margin-bottom: 12px;
+}
+
+.bird-image {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid rgba(125, 145, 70, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.bird-image-placeholder {
+    width: 100%;
+    max-width: 260px;
+    height: 180px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #f1f6df 0%, #e3edc3 100%);
+    border: 1px solid rgba(125, 145, 70, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6f7f4d;
+    font-weight: 600;
+}
+
+/* ============================= */
+/* KNAPPAR I LISTOR */
+.bird-buttons {
+    min-width: 100px;
+}
+
+.edit-button-link {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 8px 12px;
+    margin: 0 0 8px 0;
+    background: linear-gradient(180deg, #eadf8c 0%, #dfcf67 100%);
+    color: #4d4115;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 3px 8px rgba(120, 100, 30, 0.14);
+    transition: transform 0.15s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-button-link:hover {
+    text-decoration: none;
+    filter: brightness(1.03);
+    box-shadow: 0 5px 10px rgba(120, 100, 30, 0.18);
+}
+
+.edit-button-link:active {
+    transform: translateY(1px);
+}
+
+.delete-form {
+    margin: 0;
+}
+
+.delete-button {
+    width: 100%;
+    padding: 8px 12px;
+    margin: 0;
+    background: linear-gradient(180deg, #dfa0a0 0%, #cf7f7f 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(130, 60, 60, 0.12);
+}
+
+.delete-button:hover {
+    filter: brightness(1.03);
+}
+
+/* ============================= */
+/* MOBIL */
+@media (max-width: 480px) {
+    .center-page {
+        justify-content: center;
+        padding: 44px 12px 28px;
+    }
+
+    .top-page {
+        padding: 20px 10px 28px;
+    }
+
+    .logo-text {
+        font-size: 72px;
+        margin: 18px 0 22px 0;
+    }
+
+    .container,
+    .birds-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px;
+    }
+
+    .bird-top {
+        flex-direction: column;
+    }
+
+    .bird-image,
+    .bird-image-placeholder {
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .bird-buttons {
+        width: 100%;
+    }
+
+    .edit-button-link,
+    .delete-button,
+    .bird-buttons button {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .profile-image,
+    .profile-placeholder {
+        width: 110px;
+        height: 110px;
+    }
+}

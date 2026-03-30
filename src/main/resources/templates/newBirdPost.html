@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fink - Ny fågel</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="center-page">
+
+<div class="container">
+    <h1>Lägg till ny fågelpost</h1>
+
+    <form th:action="@{/birds}" th:object="${form}" method="post">
+        <input type="hidden"
+               th:name="${_csrf.parameterName}"
+               th:value="${_csrf.token}">
+
+        <label for="species">Art</label>
+        <input type="text" id="species" th:field="*{species}">
+        <p class="error-text" th:if="${#fields.hasErrors('species')}" th:errors="*{species}"></p>
+
+        <label for="location">Plats</label>
+        <input type="text" id="location" th:field="*{location}">
+        <p class="error-text" th:if="${#fields.hasErrors('location')}" th:errors="*{location}"></p>
+
+        <label for="observedAt">Datum och tid</label>
+        <input type="datetime-local" id="observedAt" th:field="*{observedAt}">
+        <p class="error-text" th:if="${#fields.hasErrors('observedAt')}" th:errors="*{observedAt}"></p>
+
+        <button type="submit">Spara</button>
+    </form>
+
+    <div class="card">
+        <a th:href="@{/home}">
+            <button type="button">Tillbaka till hem</button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
