@@ -13,6 +13,8 @@ import se.iths.erikthorell.finkbeta3.repository.BirdPostRepository;
 import se.iths.erikthorell.finkbeta3.repository.UserRepository;
 import se.iths.erikthorell.finkbeta3.service.BirdImageResult;
 import se.iths.erikthorell.finkbeta3.service.BirdImageService;
+import se.iths.erikthorell.textformatter.TextFormatter;
+
 
 import java.security.Principal;
 import java.util.List;
@@ -25,15 +27,17 @@ public class BirdController {
     private final BirdPostRepository birdPostRepository;
     private final UserRepository userRepository;
     private final BirdImageService birdImageService;
+    private final TextFormatter textFormatter;
 
     public BirdController(
             BirdPostRepository birdPostRepository,
             UserRepository userRepository,
-            BirdImageService birdImageService
+            BirdImageService birdImageService, TextFormatter textFormatter
     ) {
         this.birdPostRepository = birdPostRepository;
         this.userRepository = userRepository;
         this.birdImageService = birdImageService;
+        this.textFormatter = textFormatter;
     }
 
     @GetMapping

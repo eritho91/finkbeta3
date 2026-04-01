@@ -25,6 +25,15 @@
 
     <h1 th:text="'Välkommen, ' + ${user.username} + '!'"></h1>
 
+    <form th:action="@{/profile/upload}" method="post" enctype="multipart/form-data">
+        <input type="hidden"
+               th:name="${_csrf.parameterName}"
+               th:value="${_csrf.token}">
+
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Ladda upp profilbild</button>
+    </form>
+
     <div class="card">
         <a th:href="@{/birds/new}">
             <button type="button">Lägg till ny fågelpost</button>
