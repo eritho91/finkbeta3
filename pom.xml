@@ -55,9 +55,9 @@
             <artifactId>thymeleaf-extras-springsecurity6</artifactId>
         </dependency>
         <dependency>
-            <groupId>se.iths.erikthorell</groupId>
+            <groupId>com.github.eritho91</groupId>
             <artifactId>textformatter</artifactId>
-            <version>1.0</version>
+            <version>1</version>
         </dependency>
 
 
